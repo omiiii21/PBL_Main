@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Directory{% endblock title %}
+{%block content%}
+<br>
+<br>
+{% for Directory in object_list %}
+<p>
+{{Directory.Name}} - {{Directory.Number}} - {{Directory.Email}} - {{Directory.Position}} 
+<p>
+{% endfor %}
+
+
+{%endblock%}

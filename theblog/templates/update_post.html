@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Edit Notice{% endblock title %}
+{%block content%}
+
+
+{% if user.is_authenticated %}   
+<h1 class='text-center'>Edit Notice</h1>
+<div class='container'>
+    <div class="form-group">
+        <form method="POST" enctype="multipart/form-data" >
+            {% csrf_token %}
+            {{form.as_p}}
+            {{form.media}}
+            <button class="btn btn-dark">Update</button>
+            <br>
+            <br>
+    </div>
+</div>
+{%else%}
+<br><br>
+Please Login!
+<br><br>
+{% endif %}
+<button type="button" class="btn btn-dark"><a href="{% url 'home' %}">Back</a></button>
+{%endblock%}
